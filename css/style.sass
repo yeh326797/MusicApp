@@ -1,0 +1,263 @@
+*
+    box-sizing: border-box
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap')
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap')
+
+@mixin bubble ($w,$h:$w)
+    width: $w
+    height: $h
+    position: absolute
+    border-radius: 50%
+
+@mixin  center
+    display: flex
+    justify-content: center
+    align-items: center
+    
+
+html,body
+    height: 100%
+    margin: 0
+    padding: 0
+
+body
+    background-color: #f4f4f4
+    display: flex
+    justify-content: center
+    align-items: center    
+    color: #063064
+
+.wrapper
+    background-color: #f3fcfd
+    width: 800px
+    height: 600px
+    position: relative
+    overflow: hidden
+    border-radius: 6px
+    box-shadow: 1px 2px 29px 2px #dcf4fa
+
+    .pink-big
+        right: -160px
+        top: -110px
+        background-color: #ebc7e5
+        +bubble(460px)
+        
+    .pink-small
+        left: -45px
+        top: 140px
+        background-color: #ebc7e5
+        +bubble(105px)
+
+    .blue-big
+        left: -30px
+        top: 345px
+        background-color: #bbe6f3
+        +bubble(520px)
+
+    .blue-small
+        right: 40px
+        bottom: 85px
+        background-color: #bbe6f3
+        +bubble(50px)
+
+    .frame
+        width: 235px
+        height: 500px
+        position: absolute
+        border-radius: 30px
+        box-shadow: 2px 14px 40px -20px rgb(0 0 0 / 20%)
+
+    .left
+        background-color: #fff
+        left: 140px
+        top: 35px
+        overflow: hidden
+
+        .header
+            width: 100%
+            font-family: "Fjalla One", sans-serif
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 27px 27px 21px 27px
+            font-size: 22px
+
+            .menu-btn
+                border: 1px solid #063064
+                width: 25px
+                border-radius: 50px
+
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 45px
+                    left: 197px
+                    border: 0.05em solid
+                    width: 8px
+                    border-radius: 50px
+
+                &::after
+                    content: ""
+                    position: absolute
+                    top: 45px
+                    left: 190px
+                    border: 0.05em solid
+                    width: 3px
+                    border-radius: 50px
+
+        .left-menu-bar
+            position: relative
+            font-family: "Roboto", sans-serif
+            left: -5px
+
+            .playlist    
+                .playlist-icon 
+                    width: 11px
+                    position: absolute
+                    left: 28px
+                    top: -6px
+                    cursor: pointer
+                
+            .like-recent
+                position: absolute
+                top: 110px
+
+                .recent
+                    left: 18px
+                    top: 90px
+
+                .like
+                    left: 25px
+                    top: 140px
+                    color: #aeb8cc
+                
+                .sign
+                    background-color: #063064
+                    top: 95px
+                    left: 15px
+                    +bubble(4px)
+
+            .title
+                font-size: 11px
+                font-weight: 500
+                transform: rotate(270deg)
+                position: absolute
+                left: 2px
+                top: 40px
+                cursor: pointer
+
+        .album
+            .album-relax
+                position: relative
+                background: url(https://images.unsplash.com/photo-1535392432937-a27c36ec07b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80) no-repeat 
+                width: 130px
+                height: 165px
+                background-size: cover
+                border-radius: 20px
+                margin-left: 58px
+                box-shadow: -10px 10px 30px -20px rgb(0 0 0 / 50%)
+                cursor: pointer
+
+                &:hover
+                    transform: scale(1.02)
+
+
+                .relax
+                    position: absolute
+                    bottom: 15px
+                    left: 20px
+                    color: #fff
+                    font-family: "Roboto", sans-serif
+                    font-size: 15px
+                    font-weight: 500
+
+            .album-flowers
+                background: url(https://images.unsplash.com/photo-1490823670292-6699d9edbb7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=933&q=80) no-repeat
+                background-size: cover
+                height: 135px
+                width: 120px
+                position: absolute
+                right: -88px
+                top: 90px
+                border-radius: 20px
+                transform: rotate(180deg)
+                box-shadow: -10px 10px 30px -20px rgb(0 0 0 / 50%)
+
+                &:hover
+                    cursor: pointer
+                    transform: rotate(180deg) scale(1.03)
+
+        .music-list
+            cursor: pointer
+            margin-left: 50px
+            margin-top: 20px
+
+            .song
+                display: flex
+                margin-bottom: 10px
+                align-items: center
+
+                .cover
+                    background-repeat: no-repeat
+                    background-size: cover
+                    width: 30px
+                    height: 30px
+                    border-radius: 10px
+                    margin-right: 10px
+
+                .song-imfo
+                    display: flex
+                    flex-direction: column
+                    font-family: "Roboto", sans-serif
+
+                    .song-name
+                        font-weight: 500
+                        font-size: 10px
+                        
+                    .artist
+                        color: #d0d2e5
+                        font-weight: 400
+                        font-size: 9px
+                        margin-top: 4px
+
+        .player
+            background-color: #bae6f2
+            height: 80px
+            width: 100%
+            border-radius: 25px 25px 0 0
+
+
+    .right
+        background-color: #bbe6f3
+        left: 435px
+        top: 60px
+        box-shadow: -6px 14px 40px -20px rgb(0 0 0 / 20%)
+
+
+    .play-btn
+        background-color: #ffffff
+        position: absolute
+        width: 27px
+        height: 27px
+        right: 10px
+        bottom: 10px
+        border-radius: 9px
+        transition: all 100ms cubic-bezier(0.175, 0.885, 0.32,1.275)
+        box-shadow: 0px 1px 2px white, 0px 2px 1px rgb(0 0 0 /15%)
+        cursor: pointer
+        border: none
+
+        .play
+            width: 13px
+            position: absolute
+            left: 7px
+            top: 8px
+
+        .pause
+            width: 12px
+            position: absolute
+            left: 7px
+            top: 8px
+            opacity: 0
