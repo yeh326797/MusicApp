@@ -16,6 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #063064;
+  font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
@@ -69,9 +70,9 @@ body {
   position: absolute;
   border-radius: 30px;
   box-shadow: 2px 14px 40px -20px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 .wrapper .left {
-  background-color: #fff;
   left: 140px;
   top: 35px;
   overflow: hidden;
@@ -110,7 +111,6 @@ body {
 }
 .wrapper .left .left-menu-bar {
   position: relative;
-  font-family: "Roboto", sans-serif;
   left: -5px;
 }
 .wrapper .left .left-menu-bar .playlist .playlist-icon {
@@ -170,7 +170,6 @@ body {
   bottom: 15px;
   left: 20px;
   color: #fff;
-  font-family: "Roboto", sans-serif;
   font-size: 15px;
   font-weight: 500;
 }
@@ -200,6 +199,10 @@ body {
   margin-bottom: 10px;
   align-items: center;
 }
+.wrapper .left .music-list .song:hover {
+  transform: scale(1.02);
+  box-shadow: -8px 10px 3px -11px rgba(0, 0, 0, 0.4);
+}
 .wrapper .left .music-list .song .cover {
   background-repeat: no-repeat;
   background-size: cover;
@@ -208,32 +211,283 @@ body {
   border-radius: 10px;
   margin-right: 10px;
 }
-.wrapper .left .music-list .song .song-imfo {
-  display: flex;
-  flex-direction: column;
-  font-family: "Roboto", sans-serif;
-}
-.wrapper .left .music-list .song .song-imfo .song-name {
-  font-weight: 500;
-  font-size: 10px;
-}
-.wrapper .left .music-list .song .song-imfo .artist {
-  color: #d0d2e5;
-  font-weight: 400;
-  font-size: 9px;
-  margin-top: 4px;
-}
 .wrapper .left .player {
   background-color: #bae6f2;
   height: 80px;
   width: 100%;
   border-radius: 25px 25px 0 0;
+  position: relative;
+  display: flex;
+}
+.wrapper .left .player::after {
+  content: "";
+  position: absolute;
+  top: 27px;
+  width: 9px;
+  height: 9px;
+  margin: -6px 0 0 37px;
+  background-color: #a5c8e3;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.7px #fff;
+}
+.wrapper .left .player .player-cover {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin: 10px 0 10px 25px;
+  border: 2px solid #fff;
+  box-shadow: 0px 15px 30px -6px rgba(0, 0, 0, 0.5);
+}
+.wrapper .left .player .song-imfo {
+  margin: 16px 0 0 10px;
+}
+.wrapper .left .player .song-imfo .artist {
+  color: #6590ad;
+  margin-top: 5px;
+  font-size: 8px;
+}
+.wrapper .left .player .player-favorite {
+  position: relative;
+}
+.wrapper .left .player .player-favorite .blue-heart {
+  width: 12px;
+  position: absolute;
+  right: -35px;
+  top: 22px;
+}
+.wrapper .left .player .player-favorite .blue-heart:hover {
+  fill: #063064;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.wrapper .left .player .play-btn {
+  bottom: 40px;
+  width: 24px;
+  height: 23px;
+  right: 25px;
+}
+.wrapper .left .player .play-btn .play, .wrapper .left .player .play-btn .pause {
+  width: 10px;
+  top: 5px;
+  left: 8px;
+}
+.wrapper .left .player .play-btn .pause {
+  left: 6px;
+}
+.wrapper .left .nav {
+  position: absolute;
+  bottom: 0;
+  color: #c5c7da;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  height: 52px;
+}
+.wrapper .left .nav .navbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.wrapper .left .nav .navbar svg {
+  width: 17px;
 }
 .wrapper .right {
   background-color: #bbe6f3;
   left: 435px;
   top: 60px;
   box-shadow: -6px 14px 40px -20px rgba(0, 0, 0, 0.2);
+}
+.wrapper .right .header-right {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper .right .header-right .back-btn {
+  margin-top: 2px;
+}
+.wrapper .right .header-right .back-btn .arrow {
+  width: 20px;
+  height: 2px;
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: #043165;
+}
+.wrapper .right .header-right .back-btn::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  top: 44px;
+  left: 19px;
+  border-radius: 5px;
+  background-color: #043165;
+  transform: rotate(-30deg);
+}
+.wrapper .right .header-right .now-play {
+  font-weight: 500;
+  font-size: 10px;
+}
+.wrapper .right .header-right .dots {
+  display: flex;
+  margin-right: 15px;
+}
+.wrapper .right .header-right .dots .dot {
+  border-radius: 50%;
+  width: 3px;
+  height: 3px;
+  background-color: #043165;
+  margin-right: 5px;
+}
+.wrapper .right .content {
+  top: 70px;
+  height: 430px;
+  position: absolute;
+}
+.wrapper .right .content .big-cover {
+  height: 210px;
+  position: relative;
+}
+.wrapper .right .content .big-cover img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+  object-position: top right;
+  z-index: 3;
+  animation: rotateImg 3s linear 0s infinite forwards;
+  animation-play-state: paused;
+}
+.wrapper .right .content .big-cover img.active {
+  animation-play-state: running;
+}
+@keyframes rotateImg {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateZ(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateZ(360deg);
+  }
+}
+.wrapper .right .content .big-cover::before {
+  content: "";
+  position: absolute;
+  background-color: #eff3f8;
+  width: 205px;
+  height: 90px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+}
+.wrapper .right .content .big-cover::after {
+  content: "";
+  position: absolute;
+  background-color: #dae3f0;
+  width: 176px;
+  height: 130px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+}
+.wrapper .right .content .big-cover .play-btn {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 18px;
+  z-index: 4;
+}
+.wrapper .right .content .big-cover .play-btn .play, .wrapper .right .content .big-cover .play-btn .pause {
+  width: 22px;
+  top: 11px;
+  left: 13px;
+}
+.wrapper .right .content .big-cover .play-btn .pause {
+  left: 11px;
+}
+.wrapper .right .content .song-imfo {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.wrapper .right .content .song-imfo .song-name {
+  font-size: 20px;
+  font-family: "Fjalla One", sans-serif;
+}
+.wrapper .right .content .song-imfo .artis {
+  font-size: 12px;
+  color: #aeb8cc;
+}
+.wrapper .right .content .tracks {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.wrapper .right .content .tracks .track {
+  border-left: 2px solid #e8e9f4;
+  margin-right: 2px;
+  transition: all 0.1s ease;
+}
+.wrapper .right .content .tracks .track1 {
+  height: 5px;
+}
+.wrapper .right .content .tracks .track2 {
+  height: 18px;
+}
+.wrapper .right .content .tracks .track3 {
+  height: 36px;
+}
+.wrapper .right .content .tracks .track4 {
+  height: 48px;
+}
+.wrapper .right .content .tracks .track5 {
+  height: 54px;
+}
+.wrapper .right .content .tracks .black {
+  border-left: 2px solid #000;
+}
+.wrapper .right .content .time {
+  margin: 20px 60px 0 90px;
+  display: flex;
+  align-items: center;
+  font-size: 9px;
+  font-weight: 500;
+}
+.wrapper .right .content .time .separate {
+  width: 11px;
+  transform: rotate(-45deg);
+  margin: 0 4px 0 4px;
+}
+.wrapper .right .content .time .duration {
+  color: #c9cade;
+}
+.wrapper .right .content .nav-right {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+.wrapper .right .content .nav-right svg {
+  width: 16px;
+  cursor: pointer;
+}
+.wrapper .right .content .nav-right .heart {
+  width: 18px;
+}
+.wrapper .right .content .nav-right .heart path:hover {
+  fill: #E52121;
 }
 .wrapper .play-btn {
   background-color: #ffffff;
@@ -260,4 +514,24 @@ body {
   left: 7px;
   top: 8px;
   opacity: 0;
+}
+.wrapper .play-btn.active .play {
+  opacity: 0;
+}
+.wrapper .play-btn.active .pause {
+  opacity: 1;
+}
+.wrapper .song-imfo {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .song-imfo .song-name {
+  font-weight: 500;
+  font-size: 10px;
+}
+.wrapper .song-imfo .artist {
+  color: #d0d2e5;
+  font-weight: 400;
+  font-size: 9px;
+  margin-top: 4px;
 }
