@@ -262,6 +262,9 @@ body {
   cursor: pointer;
   transform: scale(1.2);
 }
+.wrapper .left .player .player-favorite .blue-heart.check {
+  fill: #063064;
+}
 .wrapper .left .player .play-btn {
   bottom: 40px;
   width: 24px;
@@ -487,6 +490,9 @@ body {
   width: 18px;
 }
 .wrapper .right .content .nav-right .heart path:hover {
+  fill: #E52121;
+}
+.wrapper .right .content .nav-right .heart.check path {
   fill: #E52121;
 }
 .wrapper .play-btn {
